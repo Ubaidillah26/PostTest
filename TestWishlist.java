@@ -7,6 +7,9 @@ import static org.testng.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.internal.MouseAction;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -43,18 +46,19 @@ import com.juaracoding.pageObject.drivers.DriverSingleton;
 		
 		@Test
 		public void testWishlist1() {
-			scroll(700);
+			scroll(500);
+			sampleWishlist.cssPilih1();
 			sampleWishlist.btnChart1();
 			sampleWishlist.btnCloseChart1();
+			sampleWishlist.cssPilih2();
 			sampleWishlist.btnChart2();
 			sampleWishlist.btnCloserChart2();
-			sampleWishlist.btnSearch();
 		}
 
 		@AfterClass
 		public void closeBrowser() {
 		delay(3);
-	//	driver.quit();
+		driver.quit();
 		}
 		
 		static void delay(int detik) {

@@ -5,8 +5,11 @@ import java.util.List;
 
 import javax.swing.MenuElement;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.internal.MouseAction;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -41,11 +44,11 @@ import com.juaracoding.pageObject.drivers.DriverSingleton;
 			
 			@FindBy(xpath = "//span[@title='Close window']")
 			private WebElement btnCloseChart2;
-			
-			
+	
 			public void btnTxtSearch() {
 				btnTxtSearch.click();
 			}
+			
 			public void txtSearch() {
 				this.txtSearch.sendKeys("Printed Summer Dress");
 			}
@@ -54,12 +57,24 @@ import com.juaracoding.pageObject.drivers.DriverSingleton;
 				btnSearch.click();
 			}
 			
+			public void cssPilih1() {
+				WebElement mouse = driver.findElement(By.cssSelector(".replace-2x.img-responsive[src='http://automationpractice.com/img/p/1/2/12-home_default.jpg']"));
+				Actions action = new Actions(driver);
+				action.moveToElement(mouse).build().perform();
+			}
+			
 			public void btnChart1() {
 				btnChart1.click();
 			}
 			
 			public void btnCloseChart1() {
 				btnCloseChart1.click();
+			}
+			
+			public void cssPilih2() {
+				WebElement mouse = driver.findElement(By.cssSelector(".replace-2x.img-responsive[src='http://automationpractice.com/img/p/1/6/16-home_default.jpg']"));
+				Actions action = new Actions(driver);
+				action.moveToElement(mouse).build().perform();
 			}
 			
 			public void btnChart2() {
